@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: bedflow
+Version: 0.1.0
+Summary: Patient admission scheduling with predictive bed availability
+Requires-Python: >=3.10
+Requires-Dist: pytest
+Requires-Dist: hypothesis
+Provides-Extra: ml
+Requires-Dist: lightgbm; extra == "ml"
+Requires-Dist: pandas; extra == "ml"
+Requires-Dist: scikit-learn; extra == "ml"
+Provides-Extra: api
+Requires-Dist: fastapi; extra == "api"
+Requires-Dist: uvicorn; extra == "api"
+Requires-Dist: httpx; extra == "api"
+Provides-Extra: dev
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: mutmut; extra == "dev"
+Requires-Dist: locust; extra == "dev"

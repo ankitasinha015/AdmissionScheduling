@@ -1,0 +1,33 @@
+[project]
+name = "bedflow"
+version = "0.1.0"
+description = "Patient admission scheduling with predictive bed availability"
+requires-python = ">=3.10"
+dependencies = ["pytest", "hypothesis"]
+
+[project.optional-dependencies]
+ml = ["lightgbm", "pandas", "scikit-learn"]
+api = ["fastapi", "uvicorn", "httpx"]
+dev = ["pytest-cov", "mutmut", "locust"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["bedflow*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = [
+    "slow: takes more than a second",
+    "load: load test, excluded from normal runs",
+]
+
+[tool.coverage.run]
+source = ["bedflow"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true

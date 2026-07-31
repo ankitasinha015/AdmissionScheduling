@@ -1,0 +1,17 @@
+pytest
+hypothesis
+
+[api]
+fastapi
+uvicorn
+httpx
+
+[dev]
+pytest-cov
+mutmut
+locust
+
+[ml]
+lightgbm
+pandas
+scikit-learn
